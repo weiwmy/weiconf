@@ -4,4 +4,4 @@ Stream-Check = script-name=Stream-Check, title="Stream Unlock ", content="Please
 
 [Script]
 IP-Check = type = generic,timeout=15,script-path=https://raw.githubusercontent.com/weiwmy/config/main/surge/ip_info.js
-Stream-Check= type = generic, timeout=15, script-path=https://raw.githubusercontent.com/weiwmy/config/main/surge/network_info.js
+Stream-Check= type = generic, timeout=15, script-path=https://raw.githubusercontent.com/weiwmy/config/main/surge/stream_check.js
