@@ -1,51 +1,41 @@
-const apiUrl = "http://ip-api.com/json";
+(async () => {
+  const params = getParams($argument);
 
-async function fetchData(url) {
-  try {
-    const response = await $httpClient.get(url);
-    const data = response.data;
-    return JSON.parse(data);
-  } catch (error) {
-    throw new Error("Failed to fetch IP information. Please check your network connection.");
+  // Get a list of all available proxy groups
+  const allGroup = Object.keys(await httpAPI("/v1/policy_groups"));
+
+  // Find the root group name
+  let group = params.group;
+  let rootName = group;
+  while (allGroup.includes(rootName)) {
+    rootName = (await httpAPI(`/v1/policy_groups/select?group_name=${encodeURIComponent(rootName)}`)).policy;
   }
-}
 
-function getFlagEmoji(countryCode) {
-  if (countryCode.toUpperCase() === 'TW') {
-    countryCode = 'CN';
-  }
-  const codePoints = countryCode
-    .toUpperCase()
-    .split('')
-    .map(char => 127397 + char.charCodeAt());
-  return String.fromCodePoint(...codePoints);
-}
+  // Get IP location information
+  const { country, city, isp, org } = JSON.parse(await httpAPI('http://ip-api.com/json/?lang=en'));
 
-async function main() {
-  try {
-    const jsonData = await fetchData(apiUrl);
-    const country = jsonData.country;
-    const countryCode = jsonData.countryCode;
-    const emoji = getFlagEmoji(countryCode);
-    const city = jsonData.city;
-    const isp = jsonData.isp;
-    const ip = jsonData.query;
+  // Construct the response
+  $done({
+    title: rootName,
+    content: `Country/Region: ${country} - ${city}\nISP: ${isp}\nData Center: ${org}`,
+    icon: params.icon,
+    "icon-color": params.color
+  });
+})();
 
-    const content = `IP: ${ip}\nCarrier: ${isp}\nLocation: ${emoji}${country} - ${city}`;
-
-    $done({
-      title: "Node Information",
-      content: content,
-      icon: "globe.asia.australia.fill"
+async function httpAPI(path = "", method = "GET", body = null) {
+  return new Promise((resolve) => {
+    $httpAPI(method, path, body, (result) => {
+      resolve(result);
     });
-  } catch (e) {
-    $done({
-      title: "Request Failed",
-      content: e.message,
-      icon: "exclamationmark.circle.fill",
-      "icon-color": "#CB1B45"
-    });
-  }
+  });
 }
 
-main();
+function getParams(param) {
+  return Object.fromEntries(
+    $argument
+      .split("&")
+      .map((item) => item.split("="))
+      .map(([k, v]) => [k, decodeURIComponent(v)])
+  );
+}

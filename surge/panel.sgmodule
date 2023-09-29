@@ -1,3 +1,5 @@
+#!name=Panel
+#!desc=Panel
 [Panel]
 IP-Check = script-name=IP-Check, title="IP Check", content="Please refresh", style=info, update-interval=3600
 Stream-Check = script-name=Stream-Check, title="Stream Unlock ", content="Please refresh", update-interval=3600
