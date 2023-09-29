@@ -5,14 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>weiwmy's config</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
-
         body {
             font-family: 'JetBrains Mono', monospace;
             margin: 0;
             padding: 20px;
             background-color: #f7f7f7;
-            color: #333;
+            color: #333; /* 深灰色字体 */
         }
 
         h1 {
@@ -26,87 +24,49 @@
         }
 
         li {
-            margin-bottom: 10px;
-        }
-
-        .file-time {
-            font-size: 12px;
-            color: gray;
-        }
-
-        .folder-toggle {
-            cursor: pointer;
-            margin-right: 5px;
+            margin-bottom: 10px; /* 调整文件夹和文件之间的间距 */
+            padding-bottom: 5px;
         }
 
         .folder-content {
-            display: none;
-            margin-left: 20px;
-        }
-
-        .folder-toggle::after {
-            content: "\25B6";
-            margin-left: 5px;
-            transition: transform 0.3s;
-            color: #999;
-        }
-
-        .folder-toggle.open::after {
-            transform: rotate(90deg);
-        }
-
-        .folder-content {
-            transition: max-height 0.3s;
-            max-height: 0;
-            overflow: hidden;
-            margin-top: 10px;
-        }
-
-        .folder-content.folder-content-open {
-            max-height: 1000px;
-        }
-
-        /* 优化样式 */
-        a {
-            color: #0366d6;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .folder-toggle {
-            font-weight: bold;
-        }
-
-        .folder-toggle.open {
-            color: #0366d6;
-        }
-
-        .folder-toggle::after {
-            content: "\25B8";
-            margin-left: 5px;
-            transition: transform 0.3s;
-            color: #999;
-        }
-
-        .folder-toggle.open::after {
-            transform: rotate(90deg);
-        }
-
-        .folder-content {
-            border-left: 2px solid #0366d6;
-            padding-left: 10px;
-        }
-
-        /* 修复样式 */
-        .folder-toggle.open::after {
-            transform: rotate(90deg);
+            display: none; /* 默认隐藏文件夹内容 */
         }
 
         .folder-name {
-            margin-left: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 18px; /* 加大文件夹名字 */
+            color: black; /* 黑色字体 */
+            margin-bottom: 2px; /* 调整文件夹名字和文件名之间的间距 */
+            display: block;
+            padding-left: 24px; /* 增加左边距，用于图标显示 */
+            background-repeat: no-repeat;
+            background-position: 0 50%; /* 图标垂直居中 */
+        }
+
+        .folder-name:hover {
+            text-decoration: underline;
+        }
+
+        .file-link {
+            color: #0366d6; /* 蓝色字体 */
+            text-decoration: none;
+            display: block;
+            padding-left: 24px; /* 增加左边距，用于图标显示 */
+            background-repeat: no-repeat;
+            background-position: 0 50%; /* 图标垂直居中 */
+        }
+
+        .file-link:hover {
+            text-decoration: underline;
+        }
+
+        .folder-name::before {
+            content: "🔖"; /* 文件夹图标 */
+            margin-right: 5px;
+            font-size: 24px; /* 加大图标 */
+            display: inline-block;
+            vertical-align: middle;
         }
     </style>
 </head>
@@ -117,21 +77,13 @@
     <script>
         function createFolderItem(item) {
             const listItem = document.createElement("li");
-            const folderToggle = document.createElement("span");
             const folderName = document.createElement("span");
             const folderContent = document.createElement("ul");
 
-            folderToggle.textContent = "+";
-            folderToggle.classList.add("folder-toggle");
-            folderToggle.addEventListener("click", () => {
-                folderToggle.classList.toggle("open");
-                folderContent.classList.toggle("folder-content-open");
-            });
-
             folderName.textContent = item.name;
             folderName.classList.add("folder-name");
+            folderName.classList.add("folder-toggle"); // 添加折叠开关类名
 
-            listItem.appendChild(folderToggle);
             listItem.appendChild(folderName);
             listItem.appendChild(folderContent);
 
@@ -141,6 +93,14 @@
             };
         }
 
+        // 添加折叠效果的事件监听器
+        document.addEventListener("click", function (event) {
+            if (event.target.classList.contains("folder-toggle")) {
+                const folderContent = event.target.nextElementSibling;
+                folderContent.style.display = folderContent.style.display === "block" ? "none" : "block";
+            }
+        });
+
         function fetchRepositoryContents(url, container) {
             return fetch(url)
                 .then(response => response.json())
@@ -149,22 +109,16 @@
                         if (item.type === "dir" && item.name !== ".github" && item.name !== "index.html") {
                             const { listItem, folderContent } = createFolderItem(item);
                             container.appendChild(listItem);
-                            fetchRepositoryContents(item.url, folderContent);
+                            fetchRepositoryContents(item.url.replace("https://github.com", "https://api.github.com/repos"), folderContent);
                         } else if (item.type === "file" && item.name !== "index.html") {
                             const listItem = document.createElement("li");
                             const link = document.createElement("a");
-                            const fileTime = document.createElement("span");
 
                             link.href = item.html_url;
                             link.textContent = item.name;
-
-                            const lastModified = new Date(item.last_modified);
-                            const formattedDate = lastModified.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-                            fileTime.textContent = formattedDate;
-                            fileTime.classList.add("file-time");
+                            link.classList.add("file-link");
 
                             listItem.appendChild(link);
-                            listItem.appendChild(fileTime);
                             container.appendChild(listItem);
                         }
                     });
