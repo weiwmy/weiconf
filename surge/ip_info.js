@@ -1,41 +1,24 @@
-(async () => {
-  const params = getParams($argument);
+const url = "http://ip-api.com/json";
 
-  // Get a list of all available proxy groups
-  const allGroup = Object.keys(await httpAPI("/v1/policy_groups"));
+$httpClient.get(url, (error, response, data) => {
+  if (!error) {
+    const { country, city, isp, query, countryCode } = JSON.parse(data);
+    const emoji = getFlagEmoji(countryCode);
+    const content = `IP: ${query}\nISP: ${isp}\nLocation: ${emoji}${country} - ${city}`;
 
-  // Find the root group name
-  let group = params.group;
-  let rootName = group;
-  while (allGroup.includes(rootName)) {
-    rootName = (await httpAPI(`/v1/policy_groups/select?group_name=${encodeURIComponent(rootName)}`)).policy;
-  }
-
-  // Get IP location information
-  const { country, city, isp, org } = JSON.parse(await httpAPI('http://ip-api.com/json/?lang=en'));
-
-  // Construct the response
-  $done({
-    title: rootName,
-    content: `Country/Region: ${country} - ${city}\nISP: ${isp}\nData Center: ${org}`,
-    icon: params.icon,
-    "icon-color": params.color
-  });
-})();
-
-async function httpAPI(path = "", method = "GET", body = null) {
-  return new Promise((resolve) => {
-    $httpAPI(method, path, body, (result) => {
-      resolve(result);
+    $done({
+      title: "IP Check",
+      content,
+      icon: "globe.asia.australia.fill"
     });
-  });
-}
+  } else {
+    $done({ error });
+  }
+});
 
-function getParams(param) {
-  return Object.fromEntries(
-    $argument
-      .split("&")
-      .map((item) => item.split("="))
-      .map(([k, v]) => [k, decodeURIComponent(v)])
-  );
+function getFlagEmoji(countryCode) {
+  if (countryCode === 'TW') {
+    countryCode = 'CN';
+  }
+  return String.fromCodePoint(...[...countryCode].map(char => 127397 + char.charCodeAt()));
 }

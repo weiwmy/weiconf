@@ -1,297 +1,159 @@
 const REQUEST_HEADERS = {
-  'User-Agent':
-    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36',
+  'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36',
   'Accept-Language': 'en',
 };
 
 // Status constants
-const STATUS_COMING = 2;
-const STATUS_AVAILABLE = 1;
-const STATUS_NOT_AVAILABLE = 0;
-const STATUS_TIMEOUT = -1;
-const STATUS_ERROR = -2;
+const STATUS = {
+  COMING: 2,
+  AVAILABLE: 1,
+  NOT_AVAILABLE: 0,
+  TIMEOUT: -1,
+  ERROR: -2,
+};
 
-const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36';
+const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36';
 
 (async () => {
-  let panel_result = {
-    title: 'Streaming Unlock Detection',
+  const panel_result = {
+    title: 'Stream Check',
     content: '',
     icon: 'play.tv.fill',
     'icon-color': '#FF2D55',
   };
 
-  let [{ region, status }] = await Promise.all([testDisneyPlus()]);
+  const [disneyStatus, youtubeStatus, netflixStatus] = await Promise.all([
+    testDisneyPlus(),
+    checkMedia('https://www.youtube.com/premium', 'YouTube'),
+    checkMedia('https://www.netflix.com/title/80062035', 'Netflix (Fully Unlocked)'),
+    checkMedia('https://www.netflix.com/title/80018499', 'Netflix (Originals Only)'),
+  ]);
 
-  await Promise.all([check_youtube_premium(), check_netflix()]).then((result) => {
-    console.log(result);
-    let disney_result = '';
+  const disney_result = getStatusText('Disney+', disneyStatus);
 
-    if (status == STATUS_COMING) {
-      disney_result = `Disney+: Coming Soon~ ${region.toUpperCase()}`;
-    } else if (status == STATUS_AVAILABLE) {
-      console.log(region);
-      disney_result = `Disney+: Unlocked, Region: ${region.toUpperCase()}`;
-    } else if (status == STATUS_NOT_AVAILABLE) {
-      disney_result = 'Disney+: Not Supported 🚫';
-    } else if (status == STATUS_TIMEOUT) {
-      disney_result = 'Disney+: Detection Timeout 🚦';
-    }
+  const content = [disney_result, youtubeStatus, netflixStatus].join('\n');
 
-    result.push(disney_result);
-    console.log(result);
-    let content = result.join('\n');
-    console.log(content);
+  panel_result.content = content;
 
-    panel_result['content'] = content;
-  }).finally(() => {
-    $done(panel_result);
-  });
+  $done(panel_result);
 })();
 
-async function check_youtube_premium() {
-  let inner_check = () => {
-    return new Promise((resolve, reject) => {
-      let option = {
-        url: 'https://www.youtube.com/premium',
-        headers: REQUEST_HEADERS,
-      };
-
-      $httpClient.get(option, function (error, response, data) {
-        if (error != null || response.status !== 200) {
-          reject('Error');
-          return;
-        }
-
-        if (data.indexOf('Premium is not available in your country') !== -1) {
-          resolve('Not Available');
-          return;
-        }
-
-        let region = '';
-        let re = new RegExp('"countryCode":"(.*?)"', 'gm');
-        let result = re.exec(data);
-        if (result != null && result.length === 2) {
-          region = result[1];
-        } else if (data.indexOf('www.google.cn') !== -1) {
-          region = 'CN';
-        } else {
-          region = 'US';
-        }
-        resolve(region);
-      });
-    });
+async function checkMedia(url, serviceName) {
+  try {
+    const { data, status } = await httpRequest(url);
+    if (status !== 200) throw new Error('Not Available');
+    if (serviceName === 'YouTube') {
+      if (data.includes('Premium is not available in your country')) {
+        return 'Not Supported';
+      }
+      const region = getRegionCode(data);
+      return `Unlocked, Region: ${region}`;
+    } else if (serviceName.startsWith('Netflix')) {
+      const region = getNetflixRegion(data);
+      return region ? `${serviceName}: ${region}` : 'This Node Does Not Support Unlocking';
+    }
+  } catch (error) {
+    if (error.message === 'Not Available') {
+      return 'Not Supported';
+    }
+    return 'Detection Failed, Please Refresh the Panel';
   }
-
-  let youtube_check_result = 'YouTube: ';
-
-  await inner_check().then((code) => {
-    if (code === 'Not Available') {
-      youtube_check_result += 'Not Supported';
-    } else {
-      youtube_check_result += `Unlocked, Region: ${code.toUpperCase()}`;
-    }
-  }).catch((error) => {
-    youtube_check_result += 'Detection Failed, Please Refresh the Panel';
-  });
-
-  return youtube_check_result;
-}
-
-async function check_netflix() {
-  let inner_check = (filmId) => {
-    return new Promise((resolve, reject) => {
-      let option = {
-        url: 'https://www.netflix.com/title/' + filmId,
-        headers: REQUEST_HEADERS,
-      };
-
-      $httpClient.get(option, function (error, response, data) {
-        if (error != null) {
-          reject('Error');
-          return;
-        }
-
-        if (response.status === 403) {
-          reject('Not Available');
-          return;
-        }
-
-        if (response.status === 404) {
-          resolve('Not Found');
-          return;
-        }
-
-        if (response.status === 200) {
-          let url = response.headers['x-originating-url'];
-          let region = url.split('/')[3];
-          region = region.split('-')[0];
-          if (region == 'title') {
-            region = 'us';
-          }
-          resolve(region);
-          return;
-        }
-
-        reject('Error');
-      });
-    });
-  }
-
-  let netflix_check_result = 'Netflix: ';
-
-  await inner_check(80062035).then((code) => {
-    if (code === 'Not Found') {
-      return inner_check(80018499);
-    }
-    netflix_check_result += `Fully Unlocked, Region: ${code.toUpperCase()}`;
-    return Promise.reject('BreakSignal');
-  }).then((code) => {
-    if (code === 'Not Found') {
-      return Promise.reject('Not Available');
-    }
-
-    netflix_check_result += `Only Unlocks Originals, Region: ${code.toUpperCase()}`;
-    return Promise.reject('BreakSignal');
-  }).catch((error) => {
-    if (error === 'BreakSignal') {
-      return;
-    }
-    if (error === 'Not Available') {
-      netflix_check_result += 'This Node Does Not Support Unlocking';
-      return;
-    }
-    netflix_check_result += 'Detection Failed, Please Refresh the Panel';
-  });
-
-  return netflix_check_result;
 }
 
 async function testDisneyPlus() {
   try {
-    let { region, cnbl } = await Promise.race([testHomePage(), timeout(7000)]);
-    console.log(`Homepage: region=${region}, cnbl=${cnbl}`);
+    const { region, inSupportedLocation } = await Promise.race([getLocationInfo(), timeout(7000)]);
 
-    let { countryCode, inSupportedLocation } = await Promise.race([getLocationInfo(), timeout(7000)]);
-    console.log(`Location Info: countryCode=${countryCode}, inSupportedLocation=${inSupportedLocation}`);
-
-    region = countryCode ?? region;
-    console.log(`Region: ${region}`);
-
-    if (inSupportedLocation === false || inSupportedLocation === 'false') {
-      return { region, status: STATUS_COMING };
+    if (!inSupportedLocation) {
+      return { region, status: STATUS.COMING };
     } else {
-      return { region, status: STATUS_AVAILABLE };
+      return { region, status: STATUS.AVAILABLE };
     }
   } catch (error) {
-    console.log(`Error: ${error}`);
-
-    if (error === 'Not Available') {
-      console.log('Not Supported');
-      return { status: STATUS_NOT_AVAILABLE };
+    if (error.message === 'Not Available') {
+      return { status: STATUS.NOT_AVAILABLE };
     }
-
-    if (error === 'Timeout') {
-      return { status: STATUS_TIMEOUT };
+    if (error.message === 'Timeout') {
+      return { status: STATUS.TIMEOUT };
     }
-
-    return { status: STATUS_ERROR };
+    return { status: STATUS.ERROR };
   }
 }
 
 function getLocationInfo() {
-  return new Promise((resolve, reject) => {
-    let opts = {
-      url: 'https://disney.api.edge.bamgrid.com/graph/v1/device/graphql',
-      headers: {
-        'Accept-Language': 'en',
-        Authorization: 'ZGlzbmV5JmJyb3dzZXImMS4wLjA.Cu56AgSfBTDag5NiRA81oLHkDZfu5L3CKadnefEAY84',
-        'Content-Type': 'application/json',
-        'User-Agent': UA,
+  const body = JSON.stringify({
+    query: 'mutation registerDevice($input: RegisterDeviceInput!) { registerDevice(registerDevice: $input) { grant { grantType assertion } } }',
+    variables: {
+      input: {
+        applicationRuntime: 'chrome',
+        attributes: {
+          browserName: 'chrome',
+          browserVersion: '117.0.0.0',
+          manufacturer: 'apple',
+          model: null,
+          operatingSystem: 'macintosh',
+          operatingSystemVersion: '10.15.7',
+          osDeviceIds: [],
+        },
+        deviceFamily: 'browser',
+        deviceLanguage: 'en',
+        deviceProfile: 'macosx',
       },
-      body: JSON.stringify({
-        query: 'mutation registerDevice($input: RegisterDeviceInput!) { registerDevice(registerDevice: $input) { grant { grantType assertion } } }',
-        variables: {
-          input: {
-            applicationRuntime: 'chrome',
-            attributes: {
-              browserName: 'chrome',
-              browserVersion: '94.0.4606',
-              manufacturer: 'apple',
-              model: null,
-              operatingSystem: 'macintosh',
-              operatingSystemVersion: '10.15.7',
-              osDeviceIds: [],
-            },
-            deviceFamily: 'browser',
-            deviceLanguage: 'en',
-            deviceProfile: 'macosx',
-          },
-        },
-      }),
-    };
-
-    $httpClient.post(opts, function (error, response, data) {
-      if (error) {
-        reject('Error');
-        return;
-      }
-
-      if (response.status !== 200) {
-        console.log('Location Info: ' + data);
-        reject('Not Available');
-        return;
-      }
-
-      data = JSON.parse(data);
-      if (data?.errors) {
-        console.log('Location Info: ' + data);
-        reject('Not Available');
-        return;
-      }
-
-      let {
-        token: { accessToken },
-        session: {
-          inSupportedLocation,
-          location: { countryCode },
-        },
-      } = data?.extensions?.sdk;
-
-      resolve({ inSupportedLocation, countryCode, accessToken });
-    });
+    },
   });
+
+  return httpRequest('https://disney.api.edge.bamgrid.com/graph/v1/device/graphql', 'POST', body)
+    .then(({ data }) => {
+      const { inSupportedLocation, location: { countryCode } } = data?.extensions?.sdk;
+      return { inSupportedLocation, countryCode };
+    });
 }
 
-function testHomePage() {
+function getRegionCode(data) {
+  const match = /"countryCode":"(.*?)"/.exec(data);
+  return match ? match[1] : 'US';
+}
+
+function getNetflixRegion(data) {
+  const match = /x-originating-url: https:\/\/www.netflix.com\/title\/(\d+)/i.exec(data);
+  if (match) {
+    const filmId = match[1];
+    return filmId === '80062035' ? 'Fully Unlocked' : (filmId === '80018499' ? 'Originals Only' : null);
+  }
+  return null;
+}
+
+function getStatusText(serviceName, status) {
+  switch (status) {
+    case STATUS.COMING:
+      return `${serviceName}: Coming Soon~`;
+    case STATUS.AVAILABLE:
+      return `${serviceName}: Unlocked, Region: ${status.region}`;
+    case STATUS.NOT_AVAILABLE:
+      return `${serviceName}: Not Supported`;
+    case STATUS.TIMEOUT:
+      return `${serviceName}: Detection Timeout`;
+    case STATUS.ERROR:
+      return `${serviceName}: Detection Failed`;
+    default:
+      return '';
+  }
+}
+
+function httpRequest(url, method = 'GET', body = null) {
   return new Promise((resolve, reject) => {
-    let opts = {
-      url: 'https://www.disneyplus.com/',
-      headers: {
-        'Accept-Language': 'en',
-        'User-Agent': UA,
-      },
+    const options = {
+      url,
+      method,
+      headers: REQUEST_HEADERS,
+      body,
     };
-
-    $httpClient.get(opts, function (error, response, data) {
+    $httpClient.request(options, (error, response, data) => {
       if (error) {
-        reject('Error');
+        reject(error);
         return;
       }
-      if (response.status !== 200 || data.indexOf('Sorry, Disney+ is not available in your region.') !== -1) {
-        reject('Not Available');
-        return;
-      }
-
-      let match = data.match(/Region: ([A-Za-z]{2})[\s\S]*?CNBL: ([12])/);
-      if (!match) {
-        resolve({ region: '', cnbl: '' });
-        return;
-      }
-
-      let region = match[1];
-      let cnbl = match[2];
-      resolve({ region, cnbl });
+      resolve({ data, status: response?.statusCode });
     });
   });
 }
@@ -299,7 +161,7 @@ function testHomePage() {
 function timeout(delay = 5000) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      reject('Timeout');
+      reject(new Error('Timeout'));
     }, delay);
   });
 }
