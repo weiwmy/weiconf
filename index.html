@@ -10,7 +10,7 @@
             margin: 0;
             padding: 20px;
             background-color: #f7f7f7;
-            color: #333; /* 深灰色字体 */
+            color:black; /* 深灰色字体 */
         }
 
         h1 {
@@ -109,12 +109,12 @@
                         if (item.type === "dir" && item.name !== ".github" && item.name !== "index.html") {
                             const { listItem, folderContent } = createFolderItem(item);
                             container.appendChild(listItem);
-                            fetchRepositoryContents(item.url.replace("https://github.com", "https://api.github.com/repos"), folderContent);
+                            fetchRepositoryContents(item.url.replace("https://github.com", "https://cf.weiwmy.net/"), folderContent);
                         } else if (item.type === "file" && item.name !== "index.html") {
                             const listItem = document.createElement("li");
                             const link = document.createElement("a");
 
-                            link.href = item.html_url;
+                            link.href = "https://cf.weiwmy.net/" + item.path; // 修改前缀
                             link.textContent = item.name;
                             link.classList.add("file-link");
 
