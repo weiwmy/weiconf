@@ -6,16 +6,19 @@
     <title>weiwmy's config</title>
     <style>
         body {
-            font-family: 'JetBrains Mono', monospace;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 20px;
             background-color: #f7f7f7;
-            color:black; /* 深灰色字体 */
+            color: black;
         }
 
         h1 {
-            text-align: center;
-            margin-bottom: 20px;
+            text-align: center; /* Center-align the title */
+            font-size: 30px; /* Increase the font size for the title */
+            margin: 0; /* Remove margin to ensure centered alignment */
+            padding-bottom: 10px; /* Add padding to create space for the underline */
+            border-bottom: 1px solid #ff002b; /* Change the underline color to orange and make it thinner */
         }
 
         ul {
@@ -24,24 +27,24 @@
         }
 
         li {
-            margin-bottom: 10px; /* 调整文件夹和文件之间的间距 */
+            margin-bottom: 10px;
             padding-bottom: 5px;
         }
 
         .folder-content {
-            display: none; /* 默认隐藏文件夹内容 */
+            display: none;
         }
 
         .folder-name {
             cursor: pointer;
             font-weight: bold;
-            font-size: 18px; /* 加大文件夹名字 */
-            color: black; /* 黑色字体 */
-            margin-bottom: 2px; /* 调整文件夹名字和文件名之间的间距 */
+            font-size: 18px;
+            color: black;
+            margin-bottom: 2px;
             display: block;
-            padding-left: 24px; /* 增加左边距，用于图标显示 */
+            padding-left: 24px;
             background-repeat: no-repeat;
-            background-position: 0 50%; /* 图标垂直居中 */
+            background-position: 0 50%;
         }
 
         .folder-name:hover {
@@ -49,12 +52,12 @@
         }
 
         .file-link {
-            color: #0366d6; /* 蓝色字体 */
+            color: #0366d6;
             text-decoration: none;
             display: block;
-            padding-left: 24px; /* 增加左边距，用于图标显示 */
+            padding-left: 24px;
             background-repeat: no-repeat;
-            background-position: 0 50%; /* 图标垂直居中 */
+            background-position: 0 50%;
         }
 
         .file-link:hover {
@@ -62,9 +65,9 @@
         }
 
         .folder-name::before {
-            content: "🔖"; /* 文件夹图标 */
+            content: "🔖";
             margin-right: 5px;
-            font-size: 24px; /* 加大图标 */
+            font-size: 24px;
             display: inline-block;
             vertical-align: middle;
         }
@@ -82,7 +85,7 @@
 
             folderName.textContent = item.name;
             folderName.classList.add("folder-name");
-            folderName.classList.add("folder-toggle"); // 添加折叠开关类名
+            folderName.classList.add("folder-toggle");
 
             listItem.appendChild(folderName);
             listItem.appendChild(folderContent);
@@ -93,7 +96,6 @@
             };
         }
 
-        // 添加折叠效果的事件监听器
         document.addEventListener("click", function (event) {
             if (event.target.classList.contains("folder-toggle")) {
                 const folderContent = event.target.nextElementSibling;
@@ -114,7 +116,7 @@
                             const listItem = document.createElement("li");
                             const link = document.createElement("a");
 
-                            link.href = "https://cf.weiwmy.net/" + item.path; // 修改前缀
+                            link.href = "https://cf.weiwmy.net/" + item.path;
                             link.textContent = item.name;
                             link.classList.add("file-link");
 
