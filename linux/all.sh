@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Configuration
-GITHUB_REPO="https://github.com/YourGitHubUsername/YourRepository"
+GITHUB_REPO="https://github.com/weiwmy/congfig"
 HELP_URL="https://github.com/weiwmy"
 
 # Color functions
@@ -27,7 +27,7 @@ fi
 # Function to display the main menu
 function start_menu() {
   clear
-  red " My Toolbox Script"
+  red " My Script"
   green " FROM: $GITHUB_REPO"
   green " HELP: $HELP_URL"
   green " USE:  wget -O all.sh $GITHUB_REPO/main/linux/all.sh && chmod +x all.sh && clear && ./all.sh"
