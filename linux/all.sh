@@ -30,7 +30,7 @@ function start_menu() {
   red " My Script"
   green " FROM: $GITHUB_REPO"
   green " HELP: $HELP_URL"
-  green " USE:  wget -O all.sh https://github.com/weiwmy/config/main/linux/all.sh && chmod +x all.sh && clear && ./all.sh"
+  green " USE:  wget -O all.sh https://raw.githubusercontent.com/weiwmy/config/main/linux/all.sh && chmod +x all.sh && clear && ./all.sh"
   yellow " =================================================="
   green " 1. Docker"
   green " 2. Docker Compose"
