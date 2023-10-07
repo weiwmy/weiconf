@@ -1,23 +1,18 @@
 # China Banks
-# > Agricultural Bank of China
+# Agricultural Bank of China
 DOMAIN-SUFFIX,abchina.com
 DOMAIN-SUFFIX,abchina.com.cn
-
-# > Bank of China
+# Bank of China
 DOMAIN-SUFFIX,boc.cn
-
-# > China Citic Bank
+# China Citic Bank
 DOMAIN-SUFFIX,citicbank.com
 DOMAIN-SUFFIX,ecitic.com
 DOMAIN-SUFFIX,ecitic.net
-
 # > China Construction Bank
 DOMAIN-SUFFIX,ccb.com
 DOMAIN-SUFFIX,ccb.com.cn
-
 # > China Everbright Bank
 DOMAIN-SUFFIX,cebbank.com
-
 # > China Merchants Bank
 USER-AGENT,cmb*
 DOMAIN-SUFFIX,cmbchina.com
