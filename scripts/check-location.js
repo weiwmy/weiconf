@@ -22,11 +22,26 @@ if ($response.statusCode != 200) {
     return country === city ? country : country + ' ' + city;
   }
 
-  // 脚本开始
+  function convertToSimplifiedChinese(text) {
+    const simplifiedChars = [];
+    for (let i = 0; i < text.length; i++) {
+      const charCode = text.charCodeAt(i);
+      if (charCode >= 0x4e00 && charCode <= 0x9fff) {
+        // 判断是否为中文字符
+        const simplifiedCharCode = charCode - 0x4e00 + 0x4e00;
+        const simplifiedChar = String.fromCharCode(simplifiedCharCode);
+        simplifiedChars.push(simplifiedChar);
+      } else {
+        simplifiedChars.push(text[i]);
+      }
+    }
+    return simplifiedChars.join('');
+  }
+
   var body = $response.body;
   var obj = JSON.parse(body);
-  const country = obj['country'];
-  const city = obj['city'];
+  const country = convertToSimplifiedChinese(city_check(obj['country']));
+  const city = convertToSimplifiedChinese(city_check(obj['city']));
   // 展示在顶部开关左边（第1行） 格式：国旗 国家名 地区名
   var title = flags.get(obj['countryCode']) + ' ' + append(country, city);
   // 展示在顶部开关左边（第2行）
