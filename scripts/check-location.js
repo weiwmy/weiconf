@@ -25,6 +25,8 @@ if ($response.statusCode != 200) {
   // 脚本开始
   var body = $response.body;
   var obj = JSON.parse(body);
+  const country = obj['country'];
+  const city = obj['city'];
   // 展示在顶部开关左边（第1行） 格式：国旗 国家名 地区名
   var title = flags.get(obj['countryCode']) + ' ' + append(country, city);
   // 展示在顶部开关左边（第2行）
