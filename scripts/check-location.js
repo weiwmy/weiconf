@@ -50,8 +50,9 @@ if ($response.statusCode != 200) {
   var ip = obj['query'];
   // 长按节点选择“查看节点信息”时的信息
   var description = '国家：' + obj['countryCode'] + ' ' + obj['country'] + '\n'
-    + '地区：' + obj['region'] + ' ' + city_check(obj['regionName']) + '\n'
-    + 'IP：' + obj['query'] + '\n'
-    + '服务商：' + obj['isp'] + '\n'
-    + '时区：' + obj['timezone'];
-  $done({title, subtitle, ip, description});
+  + '地区：' + obj['region'] + ' ' + city_check(obj['regionName']) + '\n'
+  + 'IP：' + obj['query'] + '\n'
+  + '服务商：' + obj['isp'] + '\n'
+  + '经纬度：' + obj['lat'] + ' / ' + obj['lon'] + '\n'
+  + '时区：' + obj['timezone'];
+$done({title, subtitle, ip, description});
