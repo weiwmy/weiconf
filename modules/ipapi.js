@@ -210,7 +210,7 @@ if ($response.statusCode != 200) {
   
   var body = $response.body;
   var obj = JSON.parse(body);
-  var title = flags.get(obj["country"]) + " " + City_ValidCheck(obj["city"]); 
+  var title = flags.get(obj["country"]) + " " + City_ValidCheck(obj["city"]);
   var subtitle = ISP_ValidCheck(obj["org"] || obj.as);
   var ip = obj["ip"];
   var description =
