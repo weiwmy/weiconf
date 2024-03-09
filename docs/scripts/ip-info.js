@@ -23,7 +23,6 @@ if ($response.statusCode != 200) {
     + '地区：' + obj['region'] + ' ' + city_check(obj['regionName']) + '\n'
     + 'IP：' + obj['query'] + '\n'
     + '服务商：' + obj['isp'] + '\n'
-    + '经纬度：' + obj['lat'] + ' / ' + obj['lon'] + '\n'
     + '时区：' + obj['timezone'];
   $done({title, subtitle, ip, description});
   
