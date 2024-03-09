@@ -22,7 +22,7 @@ if ($response.statusCode != 200) {
   let description = '国家：' + obj['countryCode'] + ' ' + obj['country'] + '\n'
     + '地区：' + obj['region'] + ' ' + city_check(obj['regionName']) + '\n'
     + 'IP：' + obj['query'] + '\n'
-    + '服务商：' + obj['isp'] + '\n'
+    + '服务商：' + obj['as'] + '\n'
     + '时区：' + obj['timezone'];
   $done({title, subtitle, ip, description});
   
