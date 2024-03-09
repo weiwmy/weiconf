@@ -1,0 +1,9 @@
+#!name=面板-节点信息
+#!desc=展示节点的IP/运营商/所在地
+#!category=IP-info
+
+[Panel]
+IP-info = script-name=IP-info, title="节点信息", content="请刷新", style=info, update-interval=1
+
+[Script]
+IP-info = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/weiwmy/weiconf/main/modules/ipinfo.js
