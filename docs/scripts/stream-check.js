@@ -43,12 +43,9 @@ let result = {
   "title": 'Stream Check',
   "YouTube": '<b>YouTube: </b>检测失败，请重试 !',
   "Netflix": '<b>Netflix: </b>检测失败，请重试 !',
-  "Dazn": "<b>Dazn: </b>检测失败，请重试 !",
-  "Disney": "<b>Disneyᐩ: </b>检测失败，请重试 !",
-  "Paramount" : "<b>Paramountᐩ: </b>检测失败，请重试 !",
-  "Discovery" : "<b>Discoveryᐩ: </b>检测失败，请重试 !",
-  "ChatGPT" : "<b>ChatGPT: </b>检测失败，请重试 !"
-  //"Google": "Google 定位: 检测失败，请重试"
+  "Disney" : "<b>Disneyᐩ: </b>检测失败，请重试 !",
+  "ChatGPT": "<b>ChatGPT: </b>检测失败，请重试 !"
+  "Google" : "Google 定位: 检测失败，请重试"
 
 }
 const message = {
