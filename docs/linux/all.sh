@@ -55,7 +55,7 @@ function start_menu() {
       ;;
     4)
       # Replace the update_swap function with the script from the URL
-      wget -O swap_update.sh https://cf.weiwmy.net/linux/linux/swap.sh
+      wget -O swap_update.sh https://cf.weiwmy.net/linux/swap.sh
       chmod +x swap_update.sh
       ./swap_update.sh
       ;;
