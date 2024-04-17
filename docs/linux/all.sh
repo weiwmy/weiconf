@@ -30,7 +30,7 @@ function start_menu() {
   red " My Script"
   green " FROM: $GITHUB_REPO"
   green " HELP: $HELP_URL"
-  green " USE:  wget -O all.sh https://raw.githubusercontent.com/weiwmy/config/main/linux/all.sh && chmod +x all.sh && clear && ./all.sh"
+  green " USE:  wget -O all.sh https://cf.weiwmy.net/linux/all.sh && chmod +x all.sh && clear && ./all.sh"
   yellow " =================================================="
   green " 1. Docker"
   green " 2. Docker Compose"
@@ -55,7 +55,7 @@ function start_menu() {
       ;;
     4)
       # Replace the update_swap function with the script from the URL
-      wget -O swap_update.sh https://raw.githubusercontent.com/weiwmy/config/main/linux/swap.sh
+      wget -O swap_update.sh https://cf.weiwmy.net/linux/linux/swap.sh
       chmod +x swap_update.sh
       ./swap_update.sh
       ;;
