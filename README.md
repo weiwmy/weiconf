@@ -1,2 +1,2 @@
-## weiwmy‘s conf
+## weiwmy's conf
 #
