@@ -1,12 +1,12 @@
-site_name: weiwmy‘s conf
+site_name: weiwmy's conf
 site_url: https://cf.weiwmy.net/
 site_author: weiwmy
-site_description: >-
-  weiwmy‘s conf
+site_description: 
+  weiwmy's conf
 
 # Repository
 repo_name: weiwmy/weiwconf
-repo_url: https://github.com/weiwmy/weiwconf
+repo_url: https://github.com/weiwmy/weiconf
 
 # Copyright
 copyright: Copyright &copy; 2023 - 2024 WEI-WMY
@@ -96,8 +96,6 @@ extra:
       link: https://hub.docker.com/r/weiwmy
     - icon: fontawesome/brands/python
       link: https://pypi.org/project/weiwmy/
-    - icon: fontawesome/brands/mastodon
-      link: https://fosstodon.org/@sweiwmy
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/weiwmy
 
