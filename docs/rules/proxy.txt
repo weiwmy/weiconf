@@ -252,6 +252,7 @@ DOMAIN-SUFFIX,steamcommunity.com
 DOMAIN-SUFFIX,symauth.com
 DOMAIN-SUFFIX,symcb.com
 DOMAIN-SUFFIX,symcd.com
+DOMAIN-SUFFIX,t.co
 DOMAIN-SUFFIX,tapbots.com
 DOMAIN-SUFFIX,tapbots.net
 DOMAIN-SUFFIX,tdesktop.com
