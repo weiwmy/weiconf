@@ -34,7 +34,7 @@ function start_menu() {
   yellow " =================================================="
   green " 1. System Message"
   green " 2. Docker Compose"
-  green " 3. Enable BBR FQ"
+  green " 3. Enable BBR FQ "
   green " 4. Update SWAP "
   green " 5. Change Port "
   green " 6. Stream Media "
@@ -47,7 +47,7 @@ function start_menu() {
       system_message
       ;;
     2)
-      docker_compose_menu
+      docker_compose
       ;;
     3)
       enable_bbr_fq
@@ -56,10 +56,10 @@ function start_menu() {
       update_swap
       ;;
     5)
-      change_ssh_port
+      change_port
       ;;
     6)
-      stream_media_unlock
+      stream_media
       ;;
     0)
       exit 0
@@ -77,39 +77,11 @@ function system_message() {
     green "Bench Test Completed!"
 }
 
-# Function to handle Docker installation and uninstallation
-function docker_menu() {
-  clear
-  green " Docker Installation and Uninstallation"
-  yellow " =================================================="
-  green " 1. Install Docker"
-  green " 2. Uninstall Docker"
-  yellow " =================================================="
-  green " 0. Back to Main Menu"
-  echo
-  read -p "Enter a number:" dockerMenuInput
-  case "$dockerMenuInput" in
-    1)
-      install_docker
-      ;;
-    2)
-      uninstall_docker
-      ;;
-    0)
-      start_menu
-      ;;
-    *)
-      clear
-      red "Please enter a valid number!"
-      docker_menu
-      ;;
-  esac
-}
 
-# Function to handle Docker Compose installation and uninstallation
-function docker_compose_menu() {
+# Function to handle Docker Compose 
+function docker_compose() {
   clear
-  green " Docker Compose Installation and Uninstallation"
+  green " Docker Compose Management"
   yellow " =================================================="
   green " 1. Install dockge "
   green " 2. Install Docker "
@@ -117,8 +89,8 @@ function docker_compose_menu() {
   yellow " =================================================="
   green " 0. Back to Main Menu"
   echo
-  read -p "Enter a number:" composeMenuInput
-  case "$composeMenuInput" in
+  read -p "Enter a number:" choice
+  case "$choice" in
     1)
       install_dockge
       ;;
@@ -230,7 +202,7 @@ function enable_bbr_fq() {
 }
 
 # Function to change SSH Port
-function change_ssh_port() {
+function change_port() {
   read -p "Enter the new SSH port: " new_port
   if [[ "$new_port" =~ ^[0-9]+$ ]]; then
     sed -i "s/Port [0-9]\+/Port $new_port/g" /etc/ssh/sshd_config
