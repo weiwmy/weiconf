@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Configuration
-GITHUB_REPO="https://github.com/weiwmy/config"
+GITHUB_REPO="https://github.com/weiwmy/weiconf"
 HELP_URL="https://github.com/weiwmy"
 
 # Color functions
@@ -27,7 +27,7 @@ fi
 # Function to display the main menu
 function start_menu() {
   clear
-  red " My Script"
+  red " WEICONF"
   green " FROM: $GITHUB_REPO"
   green " HELP: $HELP_URL"
   green " USE:  wget -O all.sh https://cf.weiwmy.net/linux/all.sh && chmod +x all.sh && clear && ./all.sh"
@@ -219,7 +219,7 @@ function enable_bbr_fq() {
 
 # Function to run benchmark test
 function run_benchmark_test() {
-  wget -qO- git.io/superbench.sh | bash
+  wget -qO- bench.sh | bash
   green "Bench Test Completed!"
 }
 
