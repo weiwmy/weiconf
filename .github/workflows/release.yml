@@ -13,7 +13,7 @@ jobs:
           fetch-depth: 0
       - name: get ver
         run: |
-          echo "$(cat xray.sh | grep ver=)" >> $GITHUB_ENV
+          echo "$(cat /docs/scripts/xray/xray.sh | grep ver=)" >> $GITHUB_ENV
           echo "old=$(git tag | tail -n1)" >> $GITHUB_ENV
       # - name: test
       #   if: env.is_sh_ver == env.old 
