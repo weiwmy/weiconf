@@ -146,17 +146,21 @@ function docker_compose_menu() {
   clear
   green " Docker Compose Installation and Uninstallation"
   yellow " =================================================="
-  green " 1. Install Docker Compose"
-  green " 2. Uninstall Docker Compose"
+  green " 1. Install Dockge"
+  green " 2. Install Docker Compose"
+  green " 3. Uninstall Docker Compose"
   yellow " =================================================="
   green " 0. Back to Main Menu"
   echo
   read -p "Enter a number:" composeMenuInput
   case "$composeMenuInput" in
     1)
-      install_docker_compose
+      install_dockge
       ;;
     2)
+      install_docker_compose
+      ;;
+    3)
       uninstall_docker_compose
       ;;
     0)
@@ -169,6 +173,14 @@ function docker_compose_menu() {
       ;;
   esac
 }
+
+# Function to install dockge
+function install_dockge() {
+  mkdir -p /opt/stacks /opt/dockge
+  cd /opt/dockge
+  curl https://cf.weiwmy.net/docker/dockge/compose.yaml --output compose.yaml
+  docker compose up -d
+ } 
 
 # Function to install Docker Compose
 function install_docker_compose() {
@@ -238,7 +250,7 @@ function change_ssh_port() {
 # Function to stream media unlock
 function stream_media_unlock() {
   # Execute the script from the provided source
-  bash <(curl -L -s https://raw.githubusercontent.com/lmc999/RegionRestrictionCheck/main/check.sh)
+  bash <(curl -L -s check.unlock.media)
   green "Stream Media Unlock Completed!"
 }
 
