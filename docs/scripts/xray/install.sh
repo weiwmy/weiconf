@@ -247,7 +247,7 @@ pass_args() {
             shift 2
             ;;
         -l | --local-install)
-            [[ ! -f ${PWD}/src/core.sh || ! -f ${PWD}/$is_core.sh ]] && {
+            [[ ! -f ${PWD}/docs/scripts/xray/src/core.sh || ! -f ${PWD}/docs/scripts/xray/$is_core.sh ]] && {
                 err "当前目录 (${PWD}) 非完整的脚本目录."
             }
             local_install=1
