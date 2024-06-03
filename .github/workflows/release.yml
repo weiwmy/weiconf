@@ -21,7 +21,7 @@ jobs:
       #     echo not found new version.
       #     exit 1
       - name: zip
-        run: zip -9vr code.zip docs/scripts/xray
+        run: zip -9vr code.zip /docs/scripts/xray
       - name: release
         uses: softprops/action-gh-release@v1
         with:
