@@ -30,22 +30,21 @@ function start_menu() {
   red " WEICONF"
   green " FROM: $GITHUB_REPO"
   green " HELP: $HELP_URL"
-  green " USE:  wget -O all.sh https://cf.weiwmy.net/linux/all.sh && chmod +x all.sh && clear && ./all.sh"
+  green " USE:  curl -sS -O https://cf.weiwmy.net/linux/all.sh && chmod +x all.sh && ./all.sh"
   yellow " =================================================="
-  green " 1. Docker"
+  green " 1. System Message"
   green " 2. Docker Compose"
   green " 3. Enable BBR FQ"
   green " 4. Update SWAP "
-  green " 5. Run Bench Test"
-  green " 6. Change SSH Port"
-  green " 7. Stream Media Unlock"
+  green " 5. Change Port "
+  green " 6. Stream Media "
   yellow " =================================================="
   green " 0. Exit"
   echo
-  read -p "Enter a number:" menuNumberInput
-  case "$menuNumberInput" in
+  read -p "Enter a number:" choice
+  case "$choice" in
     1)
-      docker_menu
+      system_message
       ;;
     2)
       docker_compose_menu
@@ -54,18 +53,12 @@ function start_menu() {
       enable_bbr_fq
       ;;
     4)
-      # Replace the update_swap function with the script from the URL
-      wget -O swap_update.sh https://cf.weiwmy.net/linux/swap.sh
-      chmod +x swap_update.sh
-      ./swap_update.sh
+      update_swap
       ;;
     5)
-      run_benchmark_test
-      ;;
-    6)
       change_ssh_port
       ;;
-    7)
+    6)
       stream_media_unlock
       ;;
     0)
@@ -77,6 +70,11 @@ function start_menu() {
       start_menu
       ;;
   esac
+}
+
+function system_message() {
+    wget -qO- bench.sh | bash
+    green "Bench Test Completed!"
 }
 
 # Function to handle Docker installation and uninstallation
@@ -107,6 +105,49 @@ function docker_menu() {
       ;;
   esac
 }
+
+# Function to handle Docker Compose installation and uninstallation
+function docker_compose_menu() {
+  clear
+  green " Docker Compose Installation and Uninstallation"
+  yellow " =================================================="
+  green " 1. Install dockge "
+  green " 2. Install Docker "
+  green " 3. Uninstall Docker "
+  yellow " =================================================="
+  green " 0. Back to Main Menu"
+  echo
+  read -p "Enter a number:" composeMenuInput
+  case "$composeMenuInput" in
+    1)
+      install_dockge
+      ;;
+    2)
+      install_docker
+      install_docker_compose
+      ;;
+    3)
+      uninstall_docker
+      uninstall_docker_compose
+      ;;
+    0)
+      start_menu
+      ;;
+    *)
+      clear
+      red "Please enter a valid number!"
+      docker_compose_menu
+      ;;
+  esac
+}
+
+# Function to install dockge
+function install_dockge() {
+  mkdir -p /opt/stacks /opt/dockge
+  cd /opt/dockge
+  curl https://cf.weiwmy.net/docker/dockge/compose.yaml --output compose.yaml
+  docker compose up -d
+ } 
 
 # Function to install Docker
 function install_docker() {
@@ -140,47 +181,6 @@ function uninstall_docker() {
     yellow "Docker is not installed."
   fi
 }
-
-# Function to handle Docker Compose installation and uninstallation
-function docker_compose_menu() {
-  clear
-  green " Docker Compose Installation and Uninstallation"
-  yellow " =================================================="
-  green " 1. Install Dockge"
-  green " 2. Install Docker Compose"
-  green " 3. Uninstall Docker Compose"
-  yellow " =================================================="
-  green " 0. Back to Main Menu"
-  echo
-  read -p "Enter a number:" composeMenuInput
-  case "$composeMenuInput" in
-    1)
-      install_dockge
-      ;;
-    2)
-      install_docker_compose
-      ;;
-    3)
-      uninstall_docker_compose
-      ;;
-    0)
-      start_menu
-      ;;
-    *)
-      clear
-      red "Please enter a valid number!"
-      docker_compose_menu
-      ;;
-  esac
-}
-
-# Function to install dockge
-function install_dockge() {
-  mkdir -p /opt/stacks /opt/dockge
-  cd /opt/dockge
-  curl https://cf.weiwmy.net/docker/dockge/compose.yaml --output compose.yaml
-  docker compose up -d
- } 
 
 # Function to install Docker Compose
 function install_docker_compose() {
@@ -229,12 +229,6 @@ function enable_bbr_fq() {
   fi
 }
 
-# Function to run benchmark test
-function run_benchmark_test() {
-  wget -qO- bench.sh | bash
-  green "Bench Test Completed!"
-}
-
 # Function to change SSH Port
 function change_ssh_port() {
   read -p "Enter the new SSH port: " new_port
@@ -247,8 +241,14 @@ function change_ssh_port() {
   fi
 }
 
+function update_swap() {
+    wget -O swap_update.sh https://cf.weiwmy.net/linux/swap.sh
+    chmod +x swap_update.sh
+    ./swap_update.sh
+}
+
 # Function to stream media unlock
-function stream_media_unlock() {
+function stream_media() {
   # Execute the script from the provided source
   bash <(curl -L -s check.unlock.media)
   green "Stream Media Unlock Completed!"
