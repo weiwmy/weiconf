@@ -37,7 +37,8 @@ function start_menu() {
   green " 3. Enable BBR FQ "
   green " 4. Update SWAP "
   green " 5. Change Port "
-  green " 6. Stream Media "
+  green " 6. Check Media "
+  green " 7. Backup VPS "
   yellow " =================================================="
   green " 0. Exit"
   echo
@@ -60,6 +61,9 @@ function start_menu() {
       ;;
     6)
       stream_media
+      ;;
+    7)
+      backup_vps
       ;;
     0)
       exit 0
@@ -225,6 +229,11 @@ function stream_media() {
   bash <(curl -L -s check.unlock.media)
   green "Stream Media Unlock Completed!"
 }
+
+function backup_vps() {
+  
+}
+
 
 # Start the main menu
 start_menu
