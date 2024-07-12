@@ -230,10 +230,5 @@ function stream_media() {
   green "Stream Media Unlock Completed!"
 }
 
-function backup_vps() {
-  
-}
-
-
 # Start the main menu
 start_menu
