@@ -1,0 +1,1 @@
+{"config":{"lang":["en"],"separator":"[\\s\\u200b\\-_,:!=\\[\\]()\"`/]+|\\.(?!\\d)|&[lg]t;|(?!\\b)(?=[A-Z][a-z])","pipeline":["stopWordFilter"]},"docs":[{"location":"docker/","title":"docker","text":""},{"location":"env/","title":"Index","text":"<p>env</p>"},{"location":"linux/","title":"linux","text":""},{"location":"scripts/","title":"scripts","text":""}]}
