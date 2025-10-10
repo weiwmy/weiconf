@@ -1,5 +1,3 @@
-DOMAIN,ai.google.dev
-DOMAIN,aistudio.google.com
 DOMAIN,akmcdnoversea-tw.inter.ptqy.gitv.tv
 DOMAIN,api.githubcopilot.com
 DOMAIN,api.groq.com
