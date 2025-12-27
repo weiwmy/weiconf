@@ -1,4 +1,3 @@
-# 规则名称: GEOIPCN
-# 规则统计: 1
+# 规则名称: direct
 
 GEOIP,CN,GEOIPCN

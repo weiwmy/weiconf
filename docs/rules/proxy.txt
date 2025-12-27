@@ -1,5 +1,4 @@
-# 规则名称: Global
-# 规则统计: 7374
+# 规则名称: proxy
 
 DOMAIN,cloud.oracle.com
 DOMAIN,steambroadcast.akamaized.net
@@ -363,6 +362,7 @@ DOMAIN-SUFFIX,anti1984.com
 DOMAIN-SUFFIX,antichristendom.com
 DOMAIN-SUFFIX,antiwave.net
 DOMAIN-SUFFIX,antpool.com
+DOMAIN-SUFFIX,anuneko.com
 DOMAIN-SUFFIX,anyporn.com
 DOMAIN-SUFFIX,anysex.com
 DOMAIN-SUFFIX,ao3.org
@@ -679,6 +679,7 @@ DOMAIN-SUFFIX,bit-z.com
 DOMAIN-SUFFIX,bit.do
 DOMAIN-SUFFIX,bit.ly
 DOMAIN-SUFFIX,bit.no.com
+DOMAIN-SUFFIX,bitbaby.com
 DOMAIN-SUFFIX,bitbay.net
 DOMAIN-SUFFIX,bitc.bme.emory.edu
 DOMAIN-SUFFIX,bitchute.com
@@ -1542,6 +1543,7 @@ DOMAIN-SUFFIX,demo.opera-mini.net
 DOMAIN-SUFFIX,demo.unlock-music.dev
 DOMAIN-SUFFIX,democrats.org
 DOMAIN-SUFFIX,demosisto.hk
+DOMAIN-SUFFIX,deno.com
 DOMAIN-SUFFIX,deno.dev
 DOMAIN-SUFFIX,depositphotos.com
 DOMAIN-SUFFIX,derekhsu.homeip.net
@@ -3201,6 +3203,7 @@ DOMAIN-SUFFIX,icu-project.org
 DOMAIN-SUFFIX,id.hao123.com
 DOMAIN-SUFFIX,id.heroku.com
 DOMAIN-SUFFIX,idaiwan.com
+DOMAIN-SUFFIX,idcflare.com
 DOMAIN-SUFFIX,iddddg.com
 DOMAIN-SUFFIX,idemocracy.asia
 DOMAIN-SUFFIX,identi.ca
@@ -3452,9 +3455,9 @@ DOMAIN-SUFFIX,jex.com
 DOMAIN-SUFFIX,jfqu36.club
 DOMAIN-SUFFIX,jfqu37.xyz
 DOMAIN-SUFFIX,jgoodies.com
+DOMAIN-SUFFIX,jhelab.org
 DOMAIN-SUFFIX,jiangweiping.com
 DOMAIN-SUFFIX,jiaoyou8.com
-DOMAIN-SUFFIX,jichangtj.com
 DOMAIN-SUFFIX,jiehua.cz
 DOMAIN-SUFFIX,jiepang.com
 DOMAIN-SUFFIX,jieshibaobao.com
@@ -3802,6 +3805,7 @@ DOMAIN-SUFFIX,lorenzetti.com.br
 DOMAIN-SUFFIX,lotsawahouse.org
 DOMAIN-SUFFIX,lotuslight.org.hk
 DOMAIN-SUFFIX,lotuslight.org.tw
+DOMAIN-SUFFIX,lovart.ai
 DOMAIN-SUFFIX,loved.hk
 DOMAIN-SUFFIX,lovetvshow.com
 DOMAIN-SUFFIX,lpsg.com
@@ -3832,7 +3836,6 @@ DOMAIN-SUFFIX,lyfhk.net
 DOMAIN-SUFFIX,lzjscript.com
 DOMAIN-SUFFIX,lzmtnews.org
 DOMAIN-SUFFIX,m-sport.co.uk
-DOMAIN-SUFFIX,m-team.cc
 DOMAIN-SUFFIX,m.hkgalden.com
 DOMAIN-SUFFIX,m.me
 DOMAIN-SUFFIX,m.moegirl.org
@@ -4282,6 +4285,7 @@ DOMAIN-SUFFIX,nemesis2.qx.net
 DOMAIN-SUFFIX,neo-miracle.com
 DOMAIN-SUFFIX,neoforged.net
 DOMAIN-SUFFIX,neowin.net
+DOMAIN-SUFFIX,nephobox.com
 DOMAIN-SUFFIX,netalert.me
 DOMAIN-SUFFIX,netbirds.com
 DOMAIN-SUFFIX,netcolony.com
@@ -4496,6 +4500,7 @@ DOMAIN-SUFFIX,nytstyle.com
 DOMAIN-SUFFIX,nzchinese.com
 DOMAIN-SUFFIX,nzchinese.net.nz
 DOMAIN-SUFFIX,o3o.ca
+DOMAIN-SUFFIX,oaiusercontent.com
 DOMAIN-SUFFIX,oanda.com
 DOMAIN-SUFFIX,oann.com
 DOMAIN-SUFFIX,oauth.net
@@ -4654,6 +4659,7 @@ DOMAIN-SUFFIX,paldengyal.com
 DOMAIN-SUFFIX,paljorpublications.com
 DOMAIN-SUFFIX,palmislife.com
 DOMAIN-SUFFIX,paltalk.com
+DOMAIN-SUFFIX,palworldgame.com
 DOMAIN-SUFFIX,panamapapers.sueddeutsche.de
 DOMAIN-SUFFIX,pancakeswap.finance
 DOMAIN-SUFFIX,pandafan.pub
@@ -4674,6 +4680,7 @@ DOMAIN-SUFFIX,parkansky.com
 DOMAIN-SUFFIX,parler.com
 DOMAIN-SUFFIX,parse.com
 DOMAIN-SUFFIX,parsevideo.com
+DOMAIN-SUFFIX,partnerstack.xyz
 DOMAIN-SUFFIX,partycasino.com
 DOMAIN-SUFFIX,partypoker.com
 DOMAIN-SUFFIX,passion.com
@@ -4820,6 +4827,7 @@ DOMAIN-SUFFIX,pobieramy.top
 DOMAIN-SUFFIX,podbean.com
 DOMAIN-SUFFIX,podcast.co
 DOMAIN-SUFFIX,podictionary.com
+DOMAIN-SUFFIX,podwise.ai
 DOMAIN-SUFFIX,poe.com
 DOMAIN-SUFFIX,points-media.com
 DOMAIN-SUFFIX,pokerstars.com
@@ -4895,6 +4903,7 @@ DOMAIN-SUFFIX,pride.google
 DOMAIN-SUFFIX,primevideo.com
 DOMAIN-SUFFIX,printfriendly.com
 DOMAIN-SUFFIX,prism-break.org
+DOMAIN-SUFFIX,prismic.io
 DOMAIN-SUFFIX,prisoneralert.com
 DOMAIN-SUFFIX,pritunl.com
 DOMAIN-SUFFIX,privacybox.de
@@ -5020,9 +5029,11 @@ DOMAIN-SUFFIX,radicalparty.org
 DOMAIN-SUFFIX,radiko.jp
 DOMAIN-SUFFIX,radio-canada.ca
 DOMAIN-SUFFIX,radio-en-ligne.fr
+DOMAIN-SUFFIX,radio.co
 DOMAIN-SUFFIX,radio.garden
 DOMAIN-SUFFIX,radioaustralia.net.au
 DOMAIN-SUFFIX,radiohilight.net
+DOMAIN-SUFFIX,radiojar.com
 DOMAIN-SUFFIX,radioline.co
 DOMAIN-SUFFIX,radiotime.com
 DOMAIN-SUFFIX,radiovaticana.org
@@ -5485,6 +5496,7 @@ DOMAIN-SUFFIX,snaptu.com
 DOMAIN-SUFFIX,sndcdn.com
 DOMAIN-SUFFIX,sneakme.net
 DOMAIN-SUFFIX,snowlionpub.com
+DOMAIN-SUFFIX,sntp.uk
 DOMAIN-SUFFIX,sobees.com
 DOMAIN-SUFFIX,soc.mil
 DOMAIN-SUFFIX,social.datalabour.com
@@ -5625,6 +5637,7 @@ DOMAIN-SUFFIX,startpage.com
 DOMAIN-SUFFIX,startuplivingchina.com
 DOMAIN-SUFFIX,stat.gov.tw
 DOMAIN-SUFFIX,static-economist.com
+DOMAIN-SUFFIX,static.pocketcasts.com
 DOMAIN-SUFFIX,static.shemalez.com
 DOMAIN-SUFFIX,static01.nyt.com
 DOMAIN-SUFFIX,statically.io
@@ -7375,36 +7388,3 @@ IP-CIDR,91.108.0.0/16,no-resolve
 IP-CIDR6,2001:67c:4e8::/48,no-resolve
 IP-CIDR6,2001:b28:f23d::/48,no-resolve
 IP-CIDR6,2001:b28:f23f::/48,no-resolve
-
-# 规则名称: Apple
-# 规则统计: 29
-
-DOMAIN,apple.comscoreresearch.com
-DOMAIN-SUFFIX,aaplimg.com
-DOMAIN-SUFFIX,akadns.net
-DOMAIN-SUFFIX,apple-cloudkit.com
-DOMAIN-SUFFIX,apple-dns.net
-DOMAIN-SUFFIX,apple-mapkit.com
-DOMAIN-SUFFIX,apple.co
-DOMAIN-SUFFIX,apple.com
-DOMAIN-SUFFIX,apple.com.cn
-DOMAIN-SUFFIX,apple.news
-DOMAIN-SUFFIX,appstore.com
-DOMAIN-SUFFIX,cdn-apple.com
-DOMAIN-SUFFIX,crashlytics.com
-DOMAIN-SUFFIX,icloud-content.com
-DOMAIN-SUFFIX,icloud.com
-DOMAIN-SUFFIX,icloud.com.cn
-DOMAIN-SUFFIX,itunes.com
-DOMAIN-SUFFIX,me.com
-DOMAIN-SUFFIX,mzstatic.com
-IP-CIDR,139.178.128.0/18,no-resolve
-IP-CIDR,144.178.0.0/19,no-resolve
-IP-CIDR,144.178.36.0/22,no-resolve
-IP-CIDR,144.178.48.0/20,no-resolve
-IP-CIDR,17.0.0.0/8,no-resolve
-IP-CIDR,192.35.50.0/24,no-resolve
-IP-CIDR,198.183.17.0/24,no-resolve
-IP-CIDR,205.180.175.0/24,no-resolve
-IP-CIDR,63.92.224.0/19,no-resolve
-IP-CIDR,65.199.22.0/23,no-resolve
