@@ -145,6 +145,7 @@ DOMAIN,dmqdd6hw24ucf.cloudfront.net
 DOMAIN,docker-images-prod.6aa30f8b08e16409b46e0173d6de2f56.r2.cloudflarestorage.com
 DOMAIN,docker-pinata-support.s3.amazonaws.com
 DOMAIN,download.visualstudio.microsoft.com
+DOMAIN,dqd0jw5gvbchn.cloudfront.net
 DOMAIN,dqrpb9wgowsf5.cloudfront.net
 DOMAIN,ds-linear-abematv.akamaized.net
 DOMAIN,ds-vod-abematv.akamaized.net
@@ -5879,6 +5880,7 @@ DOMAIN-SUFFIX,chubbypornonly.com
 DOMAIN-SUFFIX,chugokubank.co.jp
 DOMAIN-SUFFIX,chuneo.xyz
 DOMAIN-SUFFIX,chunja19.net
+DOMAIN-SUFFIX,chunkbase.com
 DOMAIN-SUFFIX,chuokoron.jp
 DOMAIN-SUFFIX,chuporno.com
 DOMAIN-SUFFIX,chutes.ai
@@ -8220,6 +8222,7 @@ DOMAIN-SUFFIX,epochweekly.com
 DOMAIN-SUFFIX,eporner.com
 DOMAIN-SUFFIX,eprc.com.hk
 DOMAIN-SUFFIX,eprintsw.com
+DOMAIN-SUFFIX,equinox.io
 DOMAIN-SUFFIX,erabaru.net
 DOMAIN-SUFFIX,eracom.com.tw
 DOMAIN-SUFFIX,eraofconnection.com
@@ -14583,7 +14586,6 @@ DOMAIN-SUFFIX,maturetube.com
 DOMAIN-SUFFIX,maturewifeporn.cc
 DOMAIN-SUFFIX,maturewomenanal.com
 DOMAIN-SUFFIX,maturexxxvideos.cc
-DOMAIN-SUFFIX,maven.neoforged.net
 DOMAIN-SUFFIX,max.com
 DOMAIN-SUFFIX,max.ru
 DOMAIN-SUFFIX,maxgo.com
@@ -14991,6 +14993,7 @@ DOMAIN-SUFFIX,mindrolling.org
 DOMAIN-SUFFIX,minecraft-services.net
 DOMAIN-SUFFIX,minecraft.net
 DOMAIN-SUFFIX,minecraft.wiki
+DOMAIN-SUFFIX,minecraftforge.net
 DOMAIN-SUFFIX,minecraftservices.com
 DOMAIN-SUFFIX,minecraftshop.com
 DOMAIN-SUFFIX,mingdemedia.org
@@ -15943,6 +15946,7 @@ DOMAIN-SUFFIX,nakedsecurity.sophos.com
 DOMAIN-SUFFIX,nakido.com
 DOMAIN-SUFFIX,nalandabodhi.org
 DOMAIN-SUFFIX,nalandawest.org
+DOMAIN-SUFFIX,namemc.com
 DOMAIN-SUFFIX,namemybeats.com
 DOMAIN-SUFFIX,namethatporn.com
 DOMAIN-SUFFIX,namethatpornad.com
@@ -16058,6 +16062,7 @@ DOMAIN-SUFFIX,nenastran.com
 DOMAIN-SUFFIX,nenitas.club
 DOMAIN-SUFFIX,nentindo.net
 DOMAIN-SUFFIX,neo-miracle.com
+DOMAIN-SUFFIX,neoforged.net
 DOMAIN-SUFFIX,neotokyo.supertop-100.com
 DOMAIN-SUFFIX,neovim.io
 DOMAIN-SUFFIX,neow.in
@@ -16256,6 +16261,7 @@ DOMAIN-SUFFIX,ngeo.com
 DOMAIN-SUFFIX,nginx.com
 DOMAIN-SUFFIX,nginx.org
 DOMAIN-SUFFIX,nginxconfig.io
+DOMAIN-SUFFIX,ngrok-agent.com
 DOMAIN-SUFFIX,ngrok-free.app
 DOMAIN-SUFFIX,ngrok-free.dev
 DOMAIN-SUFFIX,ngrok-free.pizza
@@ -17072,6 +17078,7 @@ DOMAIN-SUFFIX,openleaks.org
 DOMAIN-SUFFIX,openlibrary.org
 DOMAIN-SUFFIX,openmaps.org
 DOMAIN-SUFFIX,openreality.com
+DOMAIN-SUFFIX,openrec.tv
 DOMAIN-SUFFIX,openresty.org
 DOMAIN-SUFFIX,openreview.net
 DOMAIN-SUFFIX,openrouter.ai
@@ -17107,6 +17114,7 @@ DOMAIN-SUFFIX,opte.org
 DOMAIN-SUFFIX,optica.org
 DOMAIN-SUFFIX,opticore.com
 DOMAIN-SUFFIX,opticsforthecloud.net
+DOMAIN-SUFFIX,optifine.net
 DOMAIN-SUFFIX,optimumssl.com
 DOMAIN-SUFFIX,opus-gaming.com
 DOMAIN-SUFFIX,oracle
@@ -17214,8 +17222,15 @@ DOMAIN-SUFFIX,oystermercury.top
 DOMAIN-SUFFIX,ozeex.com
 DOMAIN-SUFFIX,ozodi.org
 DOMAIN-SUFFIX,ozodlik.org
+DOMAIN-SUFFIX,ozon.by
+DOMAIN-SUFFIX,ozon.com
+DOMAIN-SUFFIX,ozon.com.by
+DOMAIN-SUFFIX,ozon.com.kz
+DOMAIN-SUFFIX,ozon.kz
 DOMAIN-SUFFIX,ozon.ru
+DOMAIN-SUFFIX,ozon.tm
 DOMAIN-SUFFIX,ozone.ru
+DOMAIN-SUFFIX,ozonru.me
 DOMAIN-SUFFIX,ozonusercontent.com
 DOMAIN-SUFFIX,ozvoice.org
 DOMAIN-SUFFIX,pa9pal.com
@@ -18593,6 +18608,7 @@ DOMAIN-SUFFIX,qattdh6.top
 DOMAIN-SUFFIX,qbittorrent.org
 DOMAIN-SUFFIX,qbmengmei6.mom
 DOMAIN-SUFFIX,qcmod.xyz
+DOMAIN-SUFFIX,qcomgeo2.com
 DOMAIN-SUFFIX,qctconnect.com
 DOMAIN-SUFFIX,qdiehzz7.me
 DOMAIN-SUFFIX,qgadmin.qcpp1.net
@@ -18637,6 +18653,7 @@ DOMAIN-SUFFIX,qt-project.org
 DOMAIN-SUFFIX,qt.io
 DOMAIN-SUFFIX,qtrac.eu
 DOMAIN-SUFFIX,qualcomm-email.com
+DOMAIN-SUFFIX,qualcomm-inc.com
 DOMAIN-SUFFIX,qualcomm.co.id
 DOMAIN-SUFFIX,qualcomm.co.in
 DOMAIN-SUFFIX,qualcomm.co.jp
@@ -20449,6 +20466,7 @@ DOMAIN-SUFFIX,spicywriter.com
 DOMAIN-SUFFIX,spideroak.com
 DOMAIN-SUFFIX,spiderpool.com
 DOMAIN-SUFFIX,spiedigitallibrary.org
+DOMAIN-SUFFIX,spigotmc.org
 DOMAIN-SUFFIX,spiritclubs.com
 DOMAIN-SUFFIX,spiritofecstasy.com
 DOMAIN-SUFFIX,spizoo.com
@@ -21164,6 +21182,8 @@ DOMAIN-SUFFIX,tegrazone.kr
 DOMAIN-SUFFIX,tehrantimes.com
 DOMAIN-SUFFIX,tejaratbank.ir
 DOMAIN-SUFFIX,telebay.com
+DOMAIN-SUFFIX,telega.info
+DOMAIN-SUFFIX,telega.me
 DOMAIN-SUFFIX,telega.one
 DOMAIN-SUFFIX,telegra.ph
 DOMAIN-SUFFIX,telegram-cdn.org
@@ -23982,6 +24002,7 @@ DOMAIN-SUFFIX,xiaohexie.com
 DOMAIN-SUFFIX,xiaolan.me
 DOMAIN-SUFFIX,xiaoma.org
 DOMAIN-SUFFIX,xiaomi.eu
+DOMAIN-SUFFIX,xiaomiflash.com
 DOMAIN-SUFFIX,xiaoou.io
 DOMAIN-SUFFIX,xiaoou.tv
 DOMAIN-SUFFIX,xiaoshuobb.life
@@ -24029,6 +24050,7 @@ DOMAIN-SUFFIX,xml-training-guide.com
 DOMAIN-SUFFIX,xmoviesforyou.com
 DOMAIN-SUFFIX,xn--096-4g6em5t.com
 DOMAIN-SUFFIX,xn--11xs86f.icu
+DOMAIN-SUFFIX,xn--1jqvh729avzfcy2d8ummib.com
 DOMAIN-SUFFIX,xn--201-4g6em5t.com
 DOMAIN-SUFFIX,xn--202-4g6em5t.com
 DOMAIN-SUFFIX,xn--203-4g6em5t.com
@@ -24075,6 +24097,7 @@ DOMAIN-SUFFIX,xn--hhr917d3fecva.xyz
 DOMAIN-SUFFIX,xn--hxtr4rozx.xn--czr694b
 DOMAIN-SUFFIX,xn--i2ru8q2qg.com
 DOMAIN-SUFFIX,xn--jlq480n2rg
+DOMAIN-SUFFIX,xn--kcrv3utim32hx9f6qe.com
 DOMAIN-SUFFIX,xn--kput3imi374g.xn--hxt814e
 DOMAIN-SUFFIX,xn--mts47c3w9b1qr.net
 DOMAIN-SUFFIX,xn--mtswd61ejxq.com
