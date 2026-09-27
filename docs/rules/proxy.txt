@@ -204,9 +204,10 @@ DOMAIN,fandom.zendesk.com
 DOMAIN,faronics.kayako.com
 DOMAIN,favoritescc-hamivideo2.cdn.hinet.net
 DOMAIN,fbcdn-a.akamaihd.net
-DOMAIN,firebase.google.com
 DOMAIN,firebase.googleapis.com
 DOMAIN,firebaseappcheck.googleapis.com
+DOMAIN,firebaseappdistribution.googleapis.com
+DOMAIN,firebaseapptesters.googleapis.com
 DOMAIN,firebasedynamiclinks-ipv4.googleapis.com
 DOMAIN,firebasedynamiclinks-ipv6.googleapis.com
 DOMAIN,firebasedynamiclinks.googleapis.com
@@ -5517,6 +5518,7 @@ DOMAIN-SUFFIX,c-ij.com
 DOMAIN-SUFFIX,c-msedge.net
 DOMAIN-SUFFIX,c-span.org
 DOMAIN-SUFFIX,c-spanvideo.org
+DOMAIN-SUFFIX,c.go-mpulse.net
 DOMAIN-SUFFIX,c.mi.com
 DOMAIN-SUFFIX,c0930.com
 DOMAIN-SUFFIX,c2cx.com
@@ -6134,6 +6136,7 @@ DOMAIN-SUFFIX,chinesedemocracy.com
 DOMAIN-SUFFIX,chinesegay.org
 DOMAIN-SUFFIX,chinesen.de
 DOMAIN-SUFFIX,chinesenews.net.au
+DOMAIN-SUFFIX,chineseposters.net
 DOMAIN-SUFFIX,chineseradioseattle.com
 DOMAIN-SUFFIX,chinesespanking.com
 DOMAIN-SUFFIX,chineseupress.com
@@ -6470,6 +6473,7 @@ DOMAIN-SUFFIX,code-class.ru
 DOMAIN-SUFFIX,code.org
 DOMAIN-SUFFIX,codeberg.org
 DOMAIN-SUFFIX,codeberg.page
+DOMAIN-SUFFIX,codebuff.com
 DOMAIN-SUFFIX,codecademy.com
 DOMAIN-SUFFIX,codeforaliving.io
 DOMAIN-SUFFIX,codeforces.com
@@ -9587,10 +9591,12 @@ DOMAIN-SUFFIX,fiotolia.com
 DOMAIN-SUFFIX,fire-emblem-heroes.com
 DOMAIN-SUFFIX,firearmsworld.net
 DOMAIN-SUFFIX,firebase.com
+DOMAIN-SUFFIX,firebase.dev
 DOMAIN-SUFFIX,firebase.io
 DOMAIN-SUFFIX,firebaseapp.com
 DOMAIN-SUFFIX,firebaseio.com
 DOMAIN-SUFFIX,fireemblemawakening.com
+DOMAIN-SUFFIX,firefox-portal-detection.com
 DOMAIN-SUFFIX,firefox.com
 DOMAIN-SUFFIX,firefox.hu
 DOMAIN-SUFFIX,firefoxtweetmachine.com
@@ -10005,6 +10011,7 @@ DOMAIN-SUFFIX,freebigmovies.com
 DOMAIN-SUFFIX,freebrowser.org
 DOMAIN-SUFFIX,freebs.com
 DOMAIN-SUFFIX,freebsd.org
+DOMAIN-SUFFIX,freebuff.com
 DOMAIN-SUFFIX,freecamsfan.com
 DOMAIN-SUFFIX,freecartoons.biz
 DOMAIN-SUFFIX,freechatnow.com
@@ -17589,6 +17596,7 @@ DOMAIN-SUFFIX,nordvpn.com
 DOMAIN-SUFFIX,norsk.mobi
 DOMAIN-SUFFIX,norton.com
 DOMAIN-SUFFIX,nos.nl
+DOMAIN-SUFFIX,note.com
 DOMAIN-SUFFIX,notegpt.io
 DOMAIN-SUFFIX,notepad-plus-plus.org
 DOMAIN-SUFFIX,noticias-rt.com
@@ -22753,6 +22761,7 @@ DOMAIN-SUFFIX,textnow.com
 DOMAIN-SUFFIX,textnow.me
 DOMAIN-SUFFIX,texttobuy.org
 DOMAIN-SUFFIX,texture.com
+DOMAIN-SUFFIX,tfbnw.net
 DOMAIN-SUFFIX,tfc-taiwan.org.tw
 DOMAIN-SUFFIX,tferwq.com
 DOMAIN-SUFFIX,tfhub.dev
@@ -24054,6 +24063,7 @@ DOMAIN-SUFFIX,vaultify.com
 DOMAIN-SUFFIX,vaultify.info
 DOMAIN-SUFFIX,vaultify.net
 DOMAIN-SUFFIX,vaultproject.io
+DOMAIN-SUFFIX,vava8.com
 DOMAIN-SUFFIX,vbcdn.com
 DOMAIN-SUFFIX,vbcdn.net
 DOMAIN-SUFFIX,vbejeyv.shop
