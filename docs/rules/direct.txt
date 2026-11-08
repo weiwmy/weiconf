@@ -38,6 +38,7 @@ DOMAIN-SUFFIX,deepseek.com
 DOMAIN-SUFFIX,didi.com
 DOMAIN-SUFFIX,dongqiudi.com
 DOMAIN-SUFFIX,ezviz7.com
+DOMAIN-SUFFIX,feishu.com
 DOMAIN-SUFFIX,geely.com
 DOMAIN-SUFFIX,hailuoai.com
 DOMAIN-SUFFIX,haodf.com
@@ -85,6 +86,7 @@ DOMAIN-SUFFIX,processon.com
 DOMAIN-SUFFIX,qihoo.com
 DOMAIN-SUFFIX,qingting.fm
 DOMAIN-SUFFIX,qiyi.com
+DOMAIN-SUFFIX,quark.com
 DOMAIN-SUFFIX,ru.ccb.com
 DOMAIN-SUFFIX,sensetime.com
 DOMAIN-SUFFIX,shimo.im

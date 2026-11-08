@@ -159,7 +159,6 @@ DOMAIN-SUFFIX,telegram.org
 DOMAIN-SUFFIX,threads.net
 DOMAIN-SUFFIX,tiktok.com
 DOMAIN-SUFFIX,tiktokcdn.com
-DOMAIN-SUFFIX,tiktokmusic.app
 DOMAIN-SUFFIX,tiktokv.com
 DOMAIN-SUFFIX,ttwebview.com
 DOMAIN-SUFFIX,tumblr.com
@@ -177,6 +176,7 @@ DOMAIN-SUFFIX,archlinux.org
 DOMAIN-SUFFIX,bitbucket.org
 DOMAIN-SUFFIX,bun.sh
 DOMAIN-SUFFIX,codeberg.org
+DOMAIN-SUFFIX,codespaces.dev
 DOMAIN-SUFFIX,cpanel.com
 DOMAIN-SUFFIX,cpanel.net
 DOMAIN-SUFFIX,crates.io
@@ -355,6 +355,7 @@ DOMAIN-SUFFIX,fortinet.com
 DOMAIN-SUFFIX,fortinet.net
 DOMAIN-SUFFIX,grammarly.com
 DOMAIN-SUFFIX,hubspot.com
+DOMAIN-SUFFIX,larksuite.com
 DOMAIN-SUFFIX,mega.co.nz
 DOMAIN-SUFFIX,mega.nz
 DOMAIN-SUFFIX,meraki.com
@@ -6981,7 +6982,6 @@ DOMAIN-SUFFIX,crtsgfb1.top
 DOMAIN-SUFFIX,crucial.com
 DOMAIN-SUFFIX,cruel-furies.com
 DOMAIN-SUFFIX,crunchbase.com
-DOMAIN-SUFFIX,crunchyroll.com
 DOMAIN-SUFFIX,crustwebsites.net
 DOMAIN-SUFFIX,cruxpool.com
 DOMAIN-SUFFIX,crypto.com
@@ -7374,7 +7374,6 @@ DOMAIN-SUFFIX,deepfreeze.tech
 DOMAIN-SUFFIX,deepmind.com
 DOMAIN-SUFFIX,deepwiki.com
 DOMAIN-SUFFIX,deepwiki.org
-DOMAIN-SUFFIX,deezer.com
 DOMAIN-SUFFIX,definebabe.com
 DOMAIN-SUFFIX,definefetish.com
 DOMAIN-SUFFIX,degruyter.com
@@ -8431,7 +8430,6 @@ DOMAIN-SUFFIX,dynu.net
 DOMAIN-SUFFIX,dysfz.cc
 DOMAIN-SUFFIX,dyttapi.com
 DOMAIN-SUFFIX,dyttapis.com
-DOMAIN-SUFFIX,dzcdn.net
 DOMAIN-SUFFIX,dzen.ru
 DOMAIN-SUFFIX,dzeninfra.ru
 DOMAIN-SUFFIX,dzze.com
@@ -10753,7 +10751,6 @@ DOMAIN-SUFFIX,fundpaypal.com
 DOMAIN-SUFFIX,fundraisingwithfacebook.com
 DOMAIN-SUFFIX,fundsupermart.com
 DOMAIN-SUFFIX,funf.tw
-DOMAIN-SUFFIX,funimation.com
 DOMAIN-SUFFIX,funko.com
 DOMAIN-SUFFIX,funkyimg.com
 DOMAIN-SUFFIX,funnyfacebook.org
@@ -19841,7 +19838,6 @@ DOMAIN-SUFFIX,paradisepoker.com
 DOMAIN-SUFFIX,paragon.com
 DOMAIN-SUFFIX,parallels.com
 DOMAIN-SUFFIX,paramount.com
-DOMAIN-SUFFIX,paramountplus.com
 DOMAIN-SUFFIX,parastorage.com
 DOMAIN-SUFFIX,pardot.com
 DOMAIN-SUFFIX,park-now.com
@@ -20083,7 +20079,6 @@ DOMAIN-SUFFIX,peacehall.com
 DOMAIN-SUFFIX,peach-cherry.com
 DOMAIN-SUFFIX,peachy18.com
 DOMAIN-SUFFIX,peachyforum.com
-DOMAIN-SUFFIX,peacocktv.com
 DOMAIN-SUFFIX,pearlher.org
 DOMAIN-SUFFIX,pearson-anaya.com
 DOMAIN-SUFFIX,pearson-intl.com
@@ -21358,7 +21353,6 @@ DOMAIN-SUFFIX,qmttqg3k.me
 DOMAIN-SUFFIX,qmzdd.com
 DOMAIN-SUFFIX,qnap.com
 DOMAIN-SUFFIX,qnapsupport.net
-DOMAIN-SUFFIX,qobuz.com
 DOMAIN-SUFFIX,qoder.com
 DOMAIN-SUFFIX,qombol.com
 DOMAIN-SUFFIX,qoo-app.com
@@ -25068,8 +25062,6 @@ DOMAIN-SUFFIX,tiburon.com
 DOMAIN-SUFFIX,tickdata.com
 DOMAIN-SUFFIX,ticket.com.tw
 DOMAIN-SUFFIX,tictoc.video
-DOMAIN-SUFFIX,tidal.com
-DOMAIN-SUFFIX,tidalhifi.com
 DOMAIN-SUFFIX,tidelift.com
 DOMAIN-SUFFIX,tiendabestbuy.com
 DOMAIN-SUFFIX,tiffany-towers.com
@@ -27181,7 +27173,6 @@ DOMAIN-SUFFIX,vrpornranked.com
 DOMAIN-SUFFIX,vrsexgames.biz
 DOMAIN-SUFFIX,vrsmash.com
 DOMAIN-SUFFIX,vrsumo.com
-DOMAIN-SUFFIX,vrv.co
 DOMAIN-SUFFIX,vs.com
 DOMAIN-SUFFIX,vsallin.net
 DOMAIN-SUFFIX,vsassets.io
